@@ -53,7 +53,6 @@ def count_words(dataframe):
 
     dataframe = dataframe.copy()
     dataframe["line"] = dataframe["line"].str.split()
-    breakpoint()
     dataframe = dataframe.explode("line")
     dataframe = dataframe.groupby("line").size().reset_index(name="count")
     return dataframe
